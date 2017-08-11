@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "http://mabatis.org//DTD Config3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <!--这个配置使全局的映射器启用或禁用缓存-->
+        <setting name="cacheEnabled" value="true"/>
+
+        <!--允许JDBC 生成主键。需要驱动器支持。如果设为了true，
+       这个设置将强制使用被生成的主键，有一些驱动器不兼容不过仍然可以执行。-->
+        <setting name="useGeneratedKeys" value="true"/>
+
+        <!--配置和设定执行器，
+            SIMPLE 执行器执行其它语句;
+            REUSE 执行器可能重复使用prepared statements 语句;
+            BATCH 执行器可以重复执行语句和批量更新-->
+        <setting name="defaultExecutorType" value="REUSE"/>
+
+        <!--全局性设置懒加载。如果设为‘false’，则所有相关联的都会被初始化加载。-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias alias="UserMapper" type="com.hester.study.entity.User"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="mappers/UserMapper.xml"/>
+    </mappers>
+</configuration>

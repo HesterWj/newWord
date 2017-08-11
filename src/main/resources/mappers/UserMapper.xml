@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "http://mabatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 1.命名空间是唯一的，根据你的Dao接口来定制的，Select标签的id对应我们的方法上的函数名称-->
+<mapper namespace="com.hester.study.dao.IUserDao">
+    <select id="findById" parameterType="int" resultType="UserMapper">
+        select id,username as name,age,address from "user" where id = #{id}
+    </select>
+</mapper>
